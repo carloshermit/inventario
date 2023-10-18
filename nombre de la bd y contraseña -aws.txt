@@ -1,0 +1,2 @@
+bdinventario-aws
+12345678
