@@ -13,7 +13,7 @@ public class UnitServiceImpl implements UnitService {
     UnitRepository unitRepository;
     @Override
     public List<Unit> getAll() {
-        return null;
+        return unitRepository.findAll();
     }
     @Override
     public Unit getUnitById(Long unitId) {
