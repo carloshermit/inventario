@@ -22,7 +22,7 @@ public class ProductServiceImpl implements  ProductService{
         List<Product> productosActivos= products.stream()
                 .filter(product -> product.getState())
                 .collect(Collectors.toList());
-        return products;
+        return productosActivos;
     }
 
     @Override
