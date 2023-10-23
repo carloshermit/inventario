@@ -5,7 +5,7 @@ import com.app.inventario.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -17,11 +17,12 @@ public class ProductServiceImpl implements  ProductService{
     ProductRepository productRepository;
     @Override
     public List<Product> findAll() {
+
         List<Product> products= productRepository.findAll();
-        List<Product> productosInactivos= products.stream()
+        List<Product> productosActivos= products.stream()
                 .filter(product -> product.getState())
                 .collect(Collectors.toList());
-        return productosInactivos;
+        return products;
     }
 
     @Override

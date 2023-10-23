@@ -18,7 +18,7 @@ public class Product {
     private String description;
     private Float price;
     private Float quantity;
-    private Boolean state;
+    private Boolean state=Boolean.FALSE;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
