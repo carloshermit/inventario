@@ -8,6 +8,6 @@ public interface ProductService {
     List<Product> findAll();
     Product save(Product product);
     Product update(Product product);
-    String delete(Long id);
+    Boolean delete(Long id);
     Product getProductById(Long id);
 }

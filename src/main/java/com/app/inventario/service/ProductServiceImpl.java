@@ -39,14 +39,12 @@ public class ProductServiceImpl implements  ProductService{
     }
 
     @Override
-    public String delete(Long id) {
-        Product product=productRepository.findById(id).orElse(null);
-        if(Objects.nonNull(product)){
-            product.setState(false);
-            productRepository.save(product);
-            return "Producto Eliminado Correctamente";
+    public Boolean delete(Long id) {
+        if(!productRepository.existsById(id)){
+            return false;
         }
-        return "Producto no se encuentra registrado";
+        productRepository.deleteById(id);
+        return true;
     }
     @Override
     public Product getProductById(Long id) {
